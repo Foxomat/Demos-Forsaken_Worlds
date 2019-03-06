@@ -1,76 +1,139 @@
+# Knopf Klasse für vielfältig einsetzbare Knöpfe mit oder ohne draw Funktion
+# by Foxomat
+
+#-----------------------------------------------Imports-----------------------------------------------------------------
 import pygame, sys
 from pygame.locals import *
 
+#-----------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------die Klasse----------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------
 
 class Button:
     """Ein Knopf-Objekt."""
 
+#-----------------------------------------------init--------------------------------------------------------------------
+
     def __init__(self, x, y):
         self.x = x  # x und y position (linke obere ecke)
         self.y = y
-        self.width = 100
+        self.width = 100  # standartisierte Knopfgröße
         self.height = 20
-        self.buttonRect = Rect(self.x, self.y, self.width, self.height)
-        self.buttonHovered = False
+        self.buttonRect = Rect(self.x, self.y, self.width, self.height)  # Hitbox als Rechteck
+        self.buttonHovered = False  # Cursor ist über Knopf
+        self.buttonDown = False  # Knopf ist runtergedrückt
+        self.buttonPressed = False  # Knopf wurde losgelassen -> ausgelöst
 
+
+#-------------------------------------kleine Implementationshilfe-------------------------------------------------------
+
+    # einzeichnen der Hitbox auf Oberfläche
     def drawHitbox(self, surf):
         pygame.draw.rect(surf, (0, 0, 0), self.buttonRect, 1)
         pygame.draw.rect(surf, (180, 0, 0), (self.x + 1, self.y + 1, self.width - 2, self.height - 2), 1)
 
-    def mouseOverButton(self, event):
+
+#-----------------------------------------update-Funktionen-------------------------------------------------------------
+
+    # eine Funktion, die ins event-handling kommt, damit Mausdaten aktuell sind
+    def update(self, event):
+        self.__updateButtonHovered(event)
+        self.__updateButtonDown(event)
+        self.__updateButtonPressed(event)
+
+    # updated den self.buttonHovered boolean
+    def __updateButtonHovered(self, event):
         if event.type == MOUSEMOTION or event.type == MOUSEBUTTONUP or event.type == MOUSEBUTTONDOWN:
             if self.buttonRect.collidepoint(event.pos):
                 self.buttonHovered = True
-                return True
             else:
                 self.buttonHovered = False
-                return False
+            return self.buttonHovered
 
-    def buttonDown(self, event):
-        if event.type == MOUSEBUTTONDOWN or event.buttons(0) == 1:
-            if self.mouseOverButton(event):
-                return True
-            else:
-                return False
-
-    def buttonPressed(self, event):
-        if event.type == MOUSEBUTTONUP and self.mouseOverButton(event):
-            return True
+    # updated den self.buttonDown boolean
+    def __updateButtonDown(self, event):
+        if event.type == MOUSEBUTTONDOWN or (event.type == MOUSEMOTION and event.buttons[0] == 1):
+            if self.__updateButtonHovered(event):
+                self.buttonDown = True
         else:
-            return False
+            self.buttonDown = False
+        return self.buttonDown
 
+    # updated den self.buttonPressed boolean
+    def __updateButtonPressed(self, event):
+        if event.type == MOUSEBUTTONUP:
+            if self.__updateButtonHovered(event):
+                self.buttonPressed = True
+        else:
+            self.buttonPressed = False
+        return self.buttonPressed
+
+
+#-----------------------------------------getter und setter-------------------------------------------------------------
+
+    # rekalibrierung der Hitbox
     def setWidthHeight(self, width, height):
         self.width = width
         self.height = height
         self.buttonRect = Rect(self.x, self.y, self.width, self.height)
 
+    # klar
+    def getButtonHovered(self):
+        return self.buttonHovered
+
+    # klar
+    def getButtonDown(self):
+        return self.buttonDown
+
+    # gibt zurück, ob der Knopf aktiviert wurde. Der Variablentausch und das False setzen ist notwendig, da sonst wenn
+    # kein neues event generiert wird, der knopf immer aktiviert bleibt. Knopf aktivieren soll immer nur 1 tick sein.
+    def getButtonPressed(self):
+        placeholder = self.buttonPressed
+        self.buttonPressed = False
+        return placeholder
+
+
 
 #-----------------------------------------------------------------------------------------------------------------------
-#-------------------------------extended self-drawing buttons-----------------------------------------------------------
+#-----------------------------------zweite init (extended klasse)-------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------
 
+
+# diese Klasse hat Animationen, die der Knopf zeichnet, wenn der curser über ihm ist bzw wenn der knopf runtergedrückt
+# ist. Sie werden der Klassse übergeben und sie zeichnet sie selbst.
 class DrawButton(Button):
     def __init__(self, x, y, imageOne, imageTwo):
         self.x = x  # x und y position (linke obere ecke)
         self.y = y
-        self.imageOne = imageOne + ".gif"
+        self.imageOne = imageOne + ".gif"  # Bild, das erscheint, wenn der Cursor über dem Knopf ist
         self.imageOne = pygame.image.load(self.imageOne)
-        self.imageTwo = imageTwo + ".gif"
+        self.imageTwo = imageTwo + ".gif"  # Bild, das erscheint, wenn der Knopf runtergedrückt ist
         self.imageTwo = pygame.image.load(self.imageTwo)
         self.width = 100
         self.height = 20
         self.buttonRect = Rect(self.x, self.y, self.width, self.height)
         self.buttonHovered = False
+        self.buttonDown = False
+        self.buttonPressed = False
 
-    def drawMouseOverButton(self, surf, event):
-        if self.mouseOverButton(event):
+
+#----------------------------------------------draw-Funktionen----------------------------------------------------------
+
+    # eine draw-Funktion für alles, um das Hauptprogramm klein und übersichtlich zu halten
+    def draw(self, surf):
+        self.drawMouseOverButton(surf)
+        self.drawButtonDown(surf)
+
+    # zeichnet das entsprechende Bild, wenn der Cursor über dem Knopf ist
+    def drawMouseOverButton(self, surf):
+        if self.buttonHovered:
             surf.blit(self.imageOne, self.buttonRect)
             return True
         else:
             return False
-
-    def drawButtonDown(self, surf, event):
-        if self.buttonDown(event):
+    # zeichnet das entsprechende Bild, wenn der Knopf runtergedrückt ist
+    def drawButtonDown(self, surf):
+        if self.buttonDown:
             surf.blit(self.imageTwo, self.buttonRect)
             return True
         else:

@@ -1,41 +1,64 @@
+#Demsonstration und Implementierung der Knopf-Klasse
+# by Foxomat
+
+#-----------------------------------------------Imports-----------------------------------------------------------------
 import pygame, sys, Buttons
 from pygame.locals import *
 
-# Konstanten
+#----------------------------------------------Konstanten---------------------------------------------------------------
 FPS = 60
 WINWIDTH = 1200
 WINHEIGHT = 750
 
-# Farben
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-
+#-----------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------Main-Funktion--------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------
 
 def main():
+
+#---------------------------------------------pygame-zeugs--------------------------------------------------------------
     pygame.init()
     CLOCK = pygame.time.Clock()
-
     WINSURF = pygame.display.set_mode((WINWIDTH, WINHEIGHT))
+    Sound = pygame.mixer.Sound('pickup.wav')  # sound für später
 
-    test = Buttons.DrawButton(50, 50, "ikone", "ikoneEditor")
+#-----------------------------------------knopf-initialisierung---------------------------------------------------------
 
+    test = Buttons.DrawButton(500, 300, "ikone", "ikoneEditor")
+    test.setWidthHeight(30, 30)  # mit Hitbox-größenänderung
+
+    test2 = Buttons.Button(700, 300)
+    test2.setWidthHeight(30, 30)
+
+#--------------------------------------------"game"-loop----------------------------------------------------------------
 
     while True:
-        WINSURF.fill(WHITE)
-        test.drawHitbox(WINSURF)
+        WINSURF.fill((255, 255, 255))  # Hinterrund weiß
+        test.drawHitbox(WINSURF)  # Anzeigen der Hitboxen der Knöpfe
+        test2.drawHitbox(WINSURF)
 
-        # check for the QUIT event
+        # event Handling
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if event.type == QUIT:  # normaler quit event check
                 pygame.quit()
                 sys.exit()
-            test.drawMouseOverButton(WINSURF, event)
-        test.drawMouseOverButton(WINSURF)
+
+            test.update(event)  # update-Funktion für knöpfe; muss immer im event handling stehen
+            test2.update(event)
+
+        test.draw(WINSURF)  # draw heißt, zeichne deinen momentanen zustand (cursor drüber oder gedrückt oder nix)
+
+        if test.getButtonPressed():
+            Sound.play()  # das Wichtigste: irgendwas passiert wennn der Knopf gedrückt wird
+
+        if test2.getButtonPressed():
+            print("ok")
 
         CLOCK.tick()
-        pygame.display.update()
+        pygame.display.update()  # normales pygame zeug
 
 
+#-----------------------------------------------Abschluss---------------------------------------------------------------
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # für die main-Funktion. muss man da immer am ende hinschreiben
     main()
