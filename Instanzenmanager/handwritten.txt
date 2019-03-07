@@ -1,0 +1,28 @@
+probe
+5
+5
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+srocks1 , srocks2 , grass1 , grass2 , grass3 , grass4
+srocks1 , srocks2 , grass1 , grass2
+lrocks1 , lrocks2
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+lrocks1 , lrocks2
+lagerfeuer-0,lagerfeuer-1,lagerfeuer-2,lagerfeuer-3
+bankonGras
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
+grass1 , grass2 , grass3 , grass4
