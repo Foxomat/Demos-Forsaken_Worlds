@@ -86,8 +86,17 @@ class Button:
         self.buttonPressed = False
         return placeholder
 
-    def getXY(self):
-        return (self.x, self.y)
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def getWidth(self):
+        return self.width
+
+    def getHeight(self):
+        return self.height
 
     # rekalibrierung der Hitbox
     def setWidthHeight(self, width, height):
