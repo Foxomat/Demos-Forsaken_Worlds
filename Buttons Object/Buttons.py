@@ -17,7 +17,7 @@ class Button:
     def __init__(self, x, y):
         self.x = x  # x und y position (linke obere ecke)
         self.y = y
-        self.width = 100  # standartisierte Knopfgröße
+        self.width = 20  # standartisierte Knopfgröße
         self.height = 20
         self.buttonRect = Rect(self.x, self.y, self.width, self.height)  # Hitbox als Rechteck
         self.buttonHovered = False  # Cursor ist über Knopf
@@ -102,14 +102,17 @@ class Button:
 # diese Klasse hat Animationen, die der Knopf zeichnet, wenn der curser über ihm ist bzw wenn der knopf runtergedrückt
 # ist. Sie werden der Klassse übergeben und sie zeichnet sie selbst.
 class DrawButton(Button):
-    def __init__(self, x, y, imageOne, imageTwo):
+    def __init__(self, x, y, imageOne, imageTwo, imageThree = 0):
         self.x = x  # x und y position (linke obere ecke)
         self.y = y
-        self.imageOne = imageOne + ".gif"  # Bild, das erscheint, wenn der Cursor über dem Knopf ist
-        self.imageOne = pygame.image.load(self.imageOne)
-        self.imageTwo = imageTwo + ".gif"  # Bild, das erscheint, wenn der Knopf runtergedrückt ist
-        self.imageTwo = pygame.image.load(self.imageTwo)
-        self.width = 100
+        self.imageOne = pygame.image.load(imageOne)  # Bild, das erscheint, wenn der Cursor über dem Knopf ist
+        self.imageTwo = pygame.image.load(imageTwo)  # Bild, das erscheint, wenn der Knopf runtergedrückt ist
+        if imageThree == 0:
+            self.imageThree = pygame.Surface((0, 0))  # kein Standardbild übergeben -> zeichne später leere Surface
+        else:
+            self.imageThree = pygame.image.load(imageThree)  # Standardbild des Knopfes
+
+        self.width = 20
         self.height = 20
         self.buttonRect = Rect(self.x, self.y, self.width, self.height)
         self.buttonHovered = False
@@ -121,20 +124,28 @@ class DrawButton(Button):
 
     # eine draw-Funktion für alles, um das Hauptprogramm klein und übersichtlich zu halten
     def draw(self, surf):
-        self.drawMouseOverButton(surf)
-        self.drawButtonDown(surf)
+        self.__drawMouseOverButton(surf)
+        self.__drawButtonDown(surf)
+        self.__drawDefault(surf)
 
     # zeichnet das entsprechende Bild, wenn der Cursor über dem Knopf ist
-    def drawMouseOverButton(self, surf):
+    def __drawMouseOverButton(self, surf):
         if self.buttonHovered:
             surf.blit(self.imageOne, self.buttonRect)
             return True
         else:
             return False
     # zeichnet das entsprechende Bild, wenn der Knopf runtergedrückt ist
-    def drawButtonDown(self, surf):
+    def __drawButtonDown(self, surf):
         if self.buttonDown:
             surf.blit(self.imageTwo, self.buttonRect)
             return True
         else:
             return False
+
+    # zeichnet das Standardbild des Knopfes, nichts passiert
+    def __drawDefault(self, surf):
+        if self.buttonDown or self.buttonHovered:
+            return False
+        else:
+            surf.blit(self.imageThree, self.buttonRect)

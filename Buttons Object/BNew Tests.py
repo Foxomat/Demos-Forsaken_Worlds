@@ -24,7 +24,7 @@ def main():
 
 #-----------------------------------------knopf-initialisierung---------------------------------------------------------
 
-    test = Buttons.DrawButton(500, 300, "ikone", "ikoneEditor")
+    test = Buttons.DrawButton(500, 300, "ikone.gif", "ikoneEditor.gif", "ikoneEditor.gif")
     test.setWidthHeight(30, 30)  # mit Hitbox-größenänderung
 
     test2 = Buttons.Button(700, 300)
