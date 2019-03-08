@@ -71,12 +71,6 @@ class Button:
 
 #-----------------------------------------getter und setter-------------------------------------------------------------
 
-    # rekalibrierung der Hitbox
-    def setWidthHeight(self, width, height):
-        self.width = width
-        self.height = height
-        self.buttonRect = Rect(self.x, self.y, self.width, self.height)
-
     # klar
     def getButtonHovered(self):
         return self.buttonHovered
@@ -92,6 +86,18 @@ class Button:
         self.buttonPressed = False
         return placeholder
 
+    def getXY(self):
+        return (x, y)
+
+    # rekalibrierung der Hitbox
+    def setWidthHeight(self, width, height):
+        self.width = width
+        self.height = height
+        self.buttonRect = Rect(self.x, self.y, self.width, self.height)
+
+    def setXY(self, x, y):
+        self.x = x
+        self.y = y
 
 
 #-----------------------------------------------------------------------------------------------------------------------
