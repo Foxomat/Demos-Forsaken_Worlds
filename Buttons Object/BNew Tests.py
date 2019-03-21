@@ -25,10 +25,10 @@ def main():
 #-----------------------------------------knopf-initialisierung---------------------------------------------------------
 
     test = Buttons.DrawButton(500, 300, "ikone.gif", "ikoneEditor.gif", "ikoneEditor.gif")
-    test.setWidthHeight(30, 30)  # mit Hitbox-größenänderung
+    test.set_widthHeight(30, 30)  # mit Hitbox-größenänderung
 
     test2 = Buttons.Button(700, 300)
-    test2.setWidthHeight(30, 30)
+    test2.set_widthHeight(30, 30)
 
 #--------------------------------------------"game"-loop----------------------------------------------------------------
 
@@ -48,10 +48,10 @@ def main():
 
         test.draw(WINSURF)  # draw heißt, zeichne deinen momentanen zustand (cursor drüber oder gedrückt oder nix)
 
-        if test.getButtonPressed():
+        if test.get_leftButtonPressed():
             Sound.play()  # das Wichtigste: irgendwas passiert wennn der Knopf gedrückt wird
 
-        if test2.getButtonPressed():
+        if test2.get_leftButtonPressed():
             print("ok")
 
         CLOCK.tick()
