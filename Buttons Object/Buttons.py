@@ -19,19 +19,19 @@ class Button:
         self.y = y
         self.width = 20  # standartisierte Knopfgröße
         self.height = 20
-        self.buttonRect = Rect(self.x, self.y, self.width, self.height)  # Hitbox als Rechteck
-        self.buttonHovered = False  # Cursor ist über Knopf
-        self.leftButtonDown = False  # Knopf ist runtergedrückt
-        self.leftButtonPressed = False  # Knopf wurde losgelassen -> ausgelöst
-        self.rightButtonDown = False  # Knopf ist runtergedrückt
-        self.rightButtonPressed = False  # Knopf wurde losgelassen -> ausgelöst
+        self.rect = Rect(self.x, self.y, self.width, self.height)  # Hitbox als Rechteck
+        self.hovered = False  # Cursor ist über Knopf
+        self.left_mouse_down = False  # Knopf ist runtergedrückt
+        self.__left_mouse_pressed = False  # Knopf wurde losgelassen -> ausgelöst
+        self.right_mouse_down = False  # Knopf ist runtergedrückt
+        self.__right_mouse_pressed = False  # Knopf wurde losgelassen -> ausgelöst
 
 
 #-------------------------------------kleine Implementationshilfe-------------------------------------------------------
 
     # einzeichnen der Hitbox auf Oberfläche
-    def drawHitbox(self, surf):
-        pygame.draw.rect(surf, (0, 0, 0), self.buttonRect, 1)
+    def draw_hitbox(self, surf):
+        pygame.draw.rect(surf, (0, 0, 0), self.rect, 1)
         pygame.draw.rect(surf, (180, 0, 0), (self.x + 1, self.y + 1, self.width - 2, self.height - 2), 1)
 
 
@@ -39,79 +39,69 @@ class Button:
 
     # eine Funktion, die ins event-handling kommt, damit Mausdaten aktuell sind
     def update(self, event):
-        self.__updateButtonHovered(event)
-        self.__updateLeftButtonDown(event)
-        self.__updateLeftButtonPressed(event)
+        self.__update_button_hovered(event)
+        self.__update_left_mouse_down(event)
+        self.__update_left_mouse_pressed(event)
 
-    # updated den self.buttonHovered boolean
-    def __updateButtonHovered(self, event):
+    # updated den self.hovered boolean
+    def __update_button_hovered(self, event):
         if event.type == MOUSEMOTION or event.type == MOUSEBUTTONUP or event.type == MOUSEBUTTONDOWN:
-            if self.buttonRect.collidepoint(event.pos):
-                self.buttonHovered = True
+            if self.rect.collidepoint(event.pos):
+                self.hovered = True
             else:
-                self.buttonHovered = False
-            return self.buttonHovered
+                self.hovered = False
+            return self.hovered
 
     # updated den self.buttonDown boolean
-    def __updateLeftButtonDown(self, event):
+    def __update_left_mouse_down(self, event):
         if (event.type == MOUSEBUTTONDOWN and event.button == 1) or (event.type == MOUSEMOTION and
                                                                      event.buttons[0] == 1):
-            if self.__updateButtonHovered(event):
-                self.leftButtonDown = True
+            if self.__update_button_hovered(event):
+                self.left_mouse_down = True
         else:
-            self.leftButtonDown = False
-        return self.leftButtonDown
+            self.left_mouse_down = False
+        return self.left_mouse_down
 
-    def __updateRightButtonDown(self, event):
+    def __update_right_mouse_down(self, event):
         if (event.type == MOUSEBUTTONDOWN and event.button == 2) or (event.type == MOUSEMOTION and
                                                                      event.buttons[0] == 1):
-            if self.__updateButtonHovered(event):
-                self.leftButtonDown = True
+            if self.__update_button_hovered(event):
+                self.left_mouse_down = True
         else:
-            self.leftButtonDown = False
-        return self.leftButtonDown
+            self.left_mouse_down = False
+        return self.left_mouse_down
 
     # updated den self.buttonPressed boolean
-    def __updateLeftButtonPressed(self, event):
+    def __update_left_mouse_pressed(self, event):
         if event.type == MOUSEBUTTONUP and event.button == 1:
-            if self.__updateButtonHovered(event):
-                self.leftButtonPressed = True
+            if self.__update_button_hovered(event):
+                self.__left_mouse_pressed = True
         else:
-            self.leftButtonPressed = False
-        return self.leftButtonPressed
+            self.__left_mouse_pressed = False
+        return self.__left_mouse_pressed
 
-    def __updateRightButtonPressed(self, event):
+    def __update_right_mouse_pressed(self, event):
         if event.type == MOUSEBUTTONUP and event.button == 2:
-            if self.__updateButtonHovered(event):
-                self.leftButtonPressed = True
+            if self.__update_button_hovered(event):
+                self.__left_mouse_pressed = True
         else:
-            self.leftButtonPressed = False
-        return self.leftButtonPressed
+            self.__left_mouse_pressed = False
+        return self.__left_mouse_pressed
 
 
 #-----------------------------------------getter und setter-------------------------------------------------------------
 
-    # klar
-    def get_buttonHovered(self):
-        return self.buttonHovered
-
-    # klar
-    def get_leftButtonDown(self):
-        return self.leftButtonDown
-
-    def get_rightButtonDown(self):
-        return self.rightButtonDown
 
     # gibt zurück, ob der Knopf aktiviert wurde. Der Variablentausch und das False setzen ist notwendig, da sonst wenn
     # kein neues event generiert wird, der knopf immer aktiviert bleibt. Knopf aktivieren soll immer nur 1 tick sein.
-    def get_leftButtonPressed(self):
-        placeholder = self.leftButtonPressed
-        self.leftButtonPressed = False
+    def get_left_mouse_pressed(self):
+        placeholder = self.__left_mouse_pressed
+        self.__left_mouse_pressed = False
         return placeholder
 
-    def get_rightButtonPressed(self):
-        placeholder = self.rightButtonPressed
-        self.rightButtonPressed = False
+    def get_right_mouse_pressed(self):
+        placeholder = self.__right_mouse_pressed
+        self.__right_mouse_pressed = False
         return placeholder
 
     def get_x(self):
@@ -130,7 +120,7 @@ class Button:
     def set_widthHeight(self, width, height):
         self.width = width
         self.height = height
-        self.buttonRect = Rect(self.x, self.y, self.width, self.height)
+        self.rect = Rect(self.x, self.y, self.width, self.height)
 
     def set_xy(self, x, y):
         self.x = x
@@ -146,8 +136,7 @@ class Button:
 # ist. Sie werden der Klassse übergeben und sie zeichnet sie selbst.
 class DrawButton(Button):
     def __init__(self, x, y, imageOne, imageTwo, imageThree = 0):
-        self.x = x  # x und y position (linke obere ecke)
-        self.y = y
+        Button.__init__(self, x, y)
         self.imageOne = pygame.image.load(imageOne)  # Bild, das erscheint, wenn der Cursor über dem Knopf ist
         self.imageTwo = pygame.image.load(imageTwo)  # Bild, das erscheint, wenn der Knopf runtergedrückt ist
         if imageThree == 0:
@@ -155,42 +144,32 @@ class DrawButton(Button):
         else:
             self.imageThree = pygame.image.load(imageThree)  # Standardbild des Knopfes
 
-        self.width = 20
-        self.height = 20
-        self.buttonRect = Rect(self.x, self.y, self.width, self.height)
-        self.buttonHovered = False
-        self.leftButtonDown = False  # Knopf ist runtergedrückt
-        self.leftButtonPressed = False  # Knopf wurde losgelassen -> ausgelöst
-        self.rightButtonDown = False  # Knopf ist runtergedrückt
-        self.rightButtonPressed = False  # Knopf wurde losgelassen -> ausgelöst
-
-
 #----------------------------------------------draw-Funktionen----------------------------------------------------------
 
     # eine draw-Funktion für alles, um das Hauptprogramm klein und übersichtlich zu halten
     def draw(self, surf):
-        self.__drawMouseOverButton(surf)
-        self.__drawLeftButtonDown(surf)
-        self.__drawDefault(surf)
+        self.__draw_hovered(surf)
+        self.__draw_left_mouse_down(surf)
+        self.__draw_default(surf)
 
     # zeichnet das entsprechende Bild, wenn der Cursor über dem Knopf ist
-    def __drawMouseOverButton(self, surf):
-        if self.buttonHovered and not self.leftButtonDown:
-            surf.blit(self.imageOne, self.buttonRect)
+    def __draw_hovered(self, surf):
+        if self.hovered and not self.left_mouse_down:
+            surf.blit(self.imageOne, self.rect)
             return True
         else:
             return False
     # zeichnet das entsprechende Bild, wenn der Knopf runtergedrückt ist
-    def __drawLeftButtonDown(self, surf):
-        if self.leftButtonDown:
-            surf.blit(self.imageTwo, self.buttonRect)
+    def __draw_left_mouse_down(self, surf):
+        if self.left_mouse_down:
+            surf.blit(self.imageTwo, self.rect)
             return True
         else:
             return False
 
     # zeichnet das Standardbild des Knopfes, nichts passiert
-    def __drawDefault(self, surf):
-        if self.leftButtonDown or self.buttonHovered:
+    def __draw_default(self, surf):
+        if self.left_mouse_down or self.hovered:
             return False
         else:
-            surf.blit(self.imageThree, self.buttonRect)
+            surf.blit(self.imageThree, self.rect)

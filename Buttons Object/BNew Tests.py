@@ -34,8 +34,8 @@ def main():
 
     while True:
         WINSURF.fill((255, 255, 255))  # Hinterrund weiß
-        test.drawHitbox(WINSURF)  # Anzeigen der Hitboxen der Knöpfe
-        test2.drawHitbox(WINSURF)
+        test.draw_hitbox(WINSURF)  # Anzeigen der Hitboxen der Knöpfe
+        test2.draw_hitbox(WINSURF)
 
         # event Handling
         for event in pygame.event.get():
@@ -48,10 +48,10 @@ def main():
 
         test.draw(WINSURF)  # draw heißt, zeichne deinen momentanen zustand (cursor drüber oder gedrückt oder nix)
 
-        if test.get_leftButtonPressed():
+        if test.get_left_mouse_pressed():
             Sound.play()  # das Wichtigste: irgendwas passiert wennn der Knopf gedrückt wird
 
-        if test2.get_leftButtonPressed():
+        if test2.get_left_mouse_pressed():
             print("ok")
 
         CLOCK.tick()
