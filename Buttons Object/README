@@ -1,0 +1,3 @@
+Knöpfe können in variabler größe und Position erstellt werden, und er kennen, wann der cursor über ihnen ist, wann sie heruntergedrückt 
+werden, und wann sie losgelassen werden. Der Subklasse können Bilder übergeben werden, die bei den jeweiligen events angezeigt werden.
+cursor hover und pressed bilder müssen angegeben werden, ein Standardbild nicht. In dem Fall ist das Standatdbild transparent.
