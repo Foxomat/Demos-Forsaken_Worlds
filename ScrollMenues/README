@@ -1,0 +1,3 @@
+scroll menüs sind datenstrukturen ähnlich zu knöpfen, sie funktionieren so, dass man auf den auswahlknopf drückt und dann eine leiste mit
+Vorschlägen erscheint (wie wenn man auf ner website oder so sein land auswählen soll); das ausgewählte ergebnis wird dann oben angezeigt 
+und ist als string abfragbar
