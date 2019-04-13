@@ -14,11 +14,11 @@ class Button:
 
 #-----------------------------------------------init--------------------------------------------------------------------
 
-    def __init__(self, x, y):
+    def __init__(self, x, y, width, height):
         self.x = x  # x und y position (linke obere ecke)
         self.y = y
-        self.width = 20  # standartisierte Knopfgröße
-        self.height = 20
+        self.width = width
+        self.height = height
         self.rect = Rect(self.x, self.y, self.width, self.height)  # Hitbox als Rechteck
         self.hovered = False  # Cursor ist über Knopf
         self.left_mouse_down = False  # Knopf ist runtergedrückt
@@ -135,14 +135,17 @@ class Button:
 # diese Klasse hat Animationen, die der Knopf zeichnet, wenn der curser über ihm ist bzw wenn der knopf runtergedrückt
 # ist. Sie werden der Klassse übergeben und sie zeichnet sie selbst.
 class DrawButton(Button):
-    def __init__(self, x, y, imageOne, imageTwo, imageThree = 0):
-        Button.__init__(self, x, y)
-        self.imageOne = pygame.image.load(imageOne)  # Bild, das erscheint, wenn der Cursor über dem Knopf ist
+    def __init__(self, x, y, width, height, imageOne, imageTwo, imageThree = 0):
+        Button.__init__(self, x, y, width, height)
+        self.imageOne = pygame.image.load(imageOne) # Bild, das erscheint, wenn der Cursor über dem Knopf ist
+        self.imageOne = pygame.transform.scale(self.imageOne, (self.width, self.height))
         self.imageTwo = pygame.image.load(imageTwo)  # Bild, das erscheint, wenn der Knopf runtergedrückt ist
+        self.imageTwo = pygame.transform.scale(self.imageTwo, (self.width, self.height))
         if imageThree == 0:
             self.imageThree = pygame.Surface((0, 0))  # kein Standardbild übergeben -> zeichne später leere Surface
         else:
             self.imageThree = pygame.image.load(imageThree)  # Standardbild des Knopfes
+            self.imageThree = pygame.transform.scale(self.imageThree, (self.width, self.height))
 
 #----------------------------------------------draw-Funktionen----------------------------------------------------------
 

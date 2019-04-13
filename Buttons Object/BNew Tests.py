@@ -2,7 +2,7 @@
 # by Foxomat
 
 #-----------------------------------------------Imports-----------------------------------------------------------------
-import pygame, sys, Buttons
+import pygame, sys, GUI_Tests, Buttons
 from pygame.locals import *
 
 #----------------------------------------------Konstanten---------------------------------------------------------------
@@ -24,11 +24,10 @@ def main():
 
 #-----------------------------------------knopf-initialisierung---------------------------------------------------------
 
-    test = Buttons.DrawButton(500, 300, "ikone.gif", "ikoneEditor.gif", "ikoneEditor.gif")
+    test = Buttons.DrawButton(500, 300, 10, 50, "ikone.gif", "ikoneEditor.gif", "ikoneEditor.gif")
     test.set_widthHeight(30, 30)  # mit Hitbox-größenänderung
 
-    test2 = Buttons.Button(700, 300)
-    test2.set_widthHeight(30, 30)
+    test2 = Buttons.Button(700, 300, 30, 30)
 
 #--------------------------------------------"game"-loop----------------------------------------------------------------
 
