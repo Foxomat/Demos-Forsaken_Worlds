@@ -1,11 +1,11 @@
 MONO ARMATICA
 	DYNamos
 		PRojektileartige
-			Echte Projektile°
+			Echte ProjektileÂ°
 				Schusswaffen\\\
-					Bögen\\
-						Langbögen\
-							Basilistenbögen(echt lang ,man bleibt beim schießen stehn)
+					BÃ¶gen\\
+						LangbÃ¶gen\
+							BasilistenbÃ¶gen(echt lang ,man bleibt beim schieÃŸen stehn)
 	
 					Armbrust\\
 	
@@ -16,7 +16,7 @@ MONO ARMATICA
 								Enterhaken-
 								Hapunen-
 									lange Harpune(l)
-										[walfänger style]
+										[walfÃ¤nger style]
 										[orientalisch]
 									kurze Harpune(g)
 								
@@ -24,7 +24,7 @@ MONO ARMATICA
 						S.w.w mit spitze\					
 							Wurfspeere-
 					Wurfmesser\\
-			Unechte POrojektile°
+			Unechte POrojektileÂ°
 				Schleuerwaffen\\\
 				Wribelwaffen\\\
 					W.w. mit ketten\\
@@ -36,7 +36,7 @@ MONO ARMATICA
 			
 	ENErgaia
 		schw. phy. BArieren
-			schw. Schilde°
+			schw. SchildeÂ°
 				Turmschile\\\
 				gr.Rundschilde\\\
 					flacheRundschilde\\
@@ -52,20 +52,20 @@ MONO ARMATICA
 					Kesselschilde\\
 				Ritterschilde\\\				
 
-			schw. Netze°
+			schw. NetzeÂ°
 			
 			
 		HiebSchnittwaffen
-			Schwere schwerter°
+			Schwere schwerterÂ°
 				Breitschwerter(einschneidig)\\\
 
-			Lange schwerter°
+			Lange schwerterÂ°
 				Claymore\\\
 
 		WUchtwaffen
-			Stumpfe w.w°
-				Hämmer\\\
-			Nichtstumpfe w.w°
+			Stumpfe w.wÂ°
+				HÃ¤mmer\\\
+			Nichtstumpfe w.wÂ°
 				Streitkolben\\\
 					Kugelstreitkolben\\
 					Stabstreitkolben\\
@@ -75,7 +75,7 @@ MONO ARMATICA
 DI ARMATICA
 	DYN-ENE
 		UNnmamed
-			Unnamed°
+			UnnamedÂ°
 				mit Klingen\\\
 					Zweiendige \\
 						
@@ -84,7 +84,7 @@ DI ARMATICA
 							Schertglefen-
 							Krummschwertglefen-
 								Mushindo(h)
-									[Drachentöter]
+									[DrachentÃ¶ter]
 									[Bergnomade]
 							Beilglefen-
 
@@ -101,10 +101,10 @@ DI ARMATICA
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 legende:
 
-FUll CAPS    : Domäne
-3Caps/Kürzel : Regnum (Reich)
+FUll CAPS    : DomÃ¤ne
+3Caps/KÃ¼rzel : Regnum (Reich)
 2 Caps       : Phylum (Stamm)
-°            : Classis (Klasse)
+Â°            : Classis (Klasse)
 \\\          : Cohors (Kohorte)
 \\           : Ordinis (Ordnung)
 \            : Familia (Familie)
@@ -112,4 +112,4 @@ FUll CAPS    : Domäne
 (h;l;g;f;?)  : Species (Art)
 [...]        : Sub-Species (Rasse)  herkunft d.h gleiches moveset etc nur kleine differenzen bei den konkreten stats
 
-theoretisch noch verschiedene artstyls der gleichen waffe ,was aber keine untershied mehr fürn playstyle macht für $$cashcashmoney$$
+theoretisch noch verschiedene artstyls der gleichen waffe ,was aber keine untershied mehr fÃ¼rn playstyle macht fÃ¼r $$cashcashmoney$$
