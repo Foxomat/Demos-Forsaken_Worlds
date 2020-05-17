@@ -1,0 +1,115 @@
+MONO ARMATICA
+	DYNamos
+		PRojektileartige
+			Echte Projektile°
+				Schusswaffen\\\
+					Bögen\\
+						Langbögen\
+							Basilistenbögen(echt lang ,man bleibt beim schießen stehn)
+	
+					Armbrust\\
+	
+				Wurfwaffen\\\
+					Stabwurfwaffen\\
+							
+						S.w.w zum einholen\
+								Enterhaken-
+								Hapunen-
+									lange Harpune(l)
+										[walfänger style]
+										[orientalisch]
+									kurze Harpune(g)
+								
+		
+						S.w.w mit spitze\					
+							Wurfspeere-
+					Wurfmesser\\
+			Unechte POrojektile°
+				Schleuerwaffen\\\
+				Wribelwaffen\\\
+					W.w. mit ketten\\
+						
+							Verkettete klingen\
+								Kettensicheln (like how we meant it to be)-
+								Kusari Gama-
+								Kettenkunai-	
+			
+	ENErgaia
+		schw. phy. BArieren
+			schw. Schilde°
+				Turmschile\\\
+				gr.Rundschilde\\\
+					flacheRundschilde\\
+						f.r. mit irgendwas\
+							f.r mit klingen-
+								Sonnenschild(l)
+							f.r mit dornen-
+								Reiterschild TQ(l)
+									[TQ Style]
+									[imperial]
+								Nagelschild(l)
+							
+					Kesselschilde\\
+				Ritterschilde\\\				
+
+			schw. Netze°
+			
+			
+		HiebSchnittwaffen
+			Schwere schwerter°
+				Breitschwerter(einschneidig)\\\
+
+			Lange schwerter°
+				Claymore\\\
+
+		WUchtwaffen
+			Stumpfe w.w°
+				Hämmer\\\
+			Nichtstumpfe w.w°
+				Streitkolben\\\
+					Kugelstreitkolben\\
+					Stabstreitkolben\\
+	MAGica
+	SPIrituus
+
+DI ARMATICA
+	DYN-ENE
+		UNnmamed
+			Unnamed°
+				mit Klingen\\\
+					Zweiendige \\
+						
+					Einendige \\
+						Glefen\
+							Schertglefen-
+							Krummschwertglefen-
+								Mushindo(h)
+									[Drachentöter]
+									[Bergnomade]
+							Beilglefen-
+
+						Hellebarden\
+						Sensen\
+				ohne Klingen\\\
+
+	DYN-MAG
+	DYN-SPI
+	ENE-MAG
+	ENE-SPI
+	MAG-SPI
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+legende:
+
+FUll CAPS    : Domäne
+3Caps/Kürzel : Regnum (Reich)
+2 Caps       : Phylum (Stamm)
+°            : Classis (Klasse)
+\\\          : Cohors (Kohorte)
+\\           : Ordinis (Ordnung)
+\            : Familia (Familie)
+-            : Genus (Gattung)
+(h;l;g;f;?)  : Species (Art)
+[...]        : Sub-Species (Rasse)  herkunft d.h gleiches moveset etc nur kleine differenzen bei den konkreten stats
+
+theoretisch noch verschiedene artstyls der gleichen waffe ,was aber keine untershied mehr fürn playstyle macht für $$cashcashmoney$$

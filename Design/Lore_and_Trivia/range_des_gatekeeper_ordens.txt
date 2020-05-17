@@ -1,0 +1,61 @@
+1.Schülergrade (lehrlingsgrade)(mehr oder weniger an schuljahre gebunden)
+	-Quartus
+	-Tertius
+	-Secundus
+	-Unterprimus
+	-Oberprimus (verbunden mit abschluss prüfung)
+
+2.Portiergrade (Fußvolk /Mannschaft /Kanonenfutter)(keine befahlsgewalt)
+	-Recke
+	-Gefreiter
+	-Portierleutnant(quasi wieder ein lehrinlingsrang)
+	-Portier
+	-Oberportier(abstellgleisrang, primus inter pares , wer hier landet hat zumeist keine aufstiegschance mehr)
+	
+
+3.Corporalsgrade (unterofficiere)(5-15 mann befehlsgewalt)
+	-Hauptportier(5)
+	-Banerträger (zumeist wird der 3.1 rang von ordensbrüdern die ritter werden sollen übersprungen , zudem wird auch der 3.4 rang oft übersprungen )
+ 	-serengant(5-10)
+	-corporal(10-15)
+	-Knappenanwärter(nur für leute die ritter werden sollen, haben kaum dienst / missionen sondern fst nur untericht) [aurelius anfang akt 1]
+
+4.Rittergrade (erfordert schwere prüfung um aufgenommen zu werden)(10-50 mann befehlsgewalt)
+	-Knappe (quasi wieder ein lehrinlingsrang) [aurelius nach prüfungsarc (akt 1 arc1 abschnitt 2)]
+	-Scolast
+	-Ritter
+	-Professritter
+	-Portaritter (außschleißlich ordensbrüdern vorbehalten die am gate dienen)
+
+5.Commandeursgrade(30-200 mann befehlsgewalt)(eig nur für die militärische sektion des ordens gebräuchlich)
+	-Commandeurleutnant(quasi wieder ein lehrinlingsrang)
+	-Commandeur
+	-Großcommandeur
+	-Commandeur zum Tore (außschleißlich ordensbrüdern vorbehalten die am gate dienen)
+	-Genralcommandeur(eigentlich nur in den 5 großen städten aufzufinden)
+
+6.Meistergrade(leitung einer sektion innnerhalb einer niederlassung zb Hospitaläer, finanzen, militär, verwaltung etc)(50-2000 mann befehlsgewalt)
+	-Meisterleutnant(quasi wieder ein lehrinlingsrang, guckt einem meister über die schulter und läuft ihm hinterher)
+	-Meister(leitung von untersektionen zb chirugie,alchemie, waffenkammer, voratskammer etc.)
+	-Großmeister(leitung von untersektionen in großen niederlassungen wobei es dann weitere meister gibt ,oder sie koordinieren untersektionen )
+	-Erzmeister(leitung einer sektion)
+	-Dekan(einem derabtgrade stehen stehts 1 bis 3 dekane zur seite )
+
+7.Abtgrade(ab hier leitungsaufgaben für niederlassungen der gatekeeper überall auf dem mond)(150-5000 mann befehlsgewalt)(es ex. ca 2000)
+	-Guardian(nur die kleinsten nieder lassungen mit ca 150 brüdern , dort gubt es dann oft nur wenige meister und so gut wie keine zusätzlichen commandeure; oder auch zu finden in sehr großen niederlassung wie den 5 großen städten)
+	-Prior(zumesit 300 bis 500 brüder ;oder auch zu finden in sehr großen niederlassung wie den 5 großen städten)
+	-Abt (zumesit 500 bis 1000 brüder ;oder auch zu finden in sehr großen niederlassung wie den 5 großen städten)
+	-Abtprimas (eher so n ehrentitel , primus inter pares)
+	-Protonotar(schlagen zusammen mit äbten,abtprimä und vikaren die pontifices dem PM vor )(zumesit 1000 bis 3000 brüder ;oder auch zu finden in sehr großen niederlassung wie den 5 großen städten)(zumesit 1000 bis 3000 brüder ;oder auch zu finden in sehr großen niederlassung wie den 5 großen städten)
+
+8.Kardinalsgrade
+	-vikar(einem potifex stehen stehts 1 bis 3 vikare zur seite, mehr so gehilfen ,haben zumeist keine eigene jursitiktion)
+	-pontifex(müssen die ernneng von Kardinälen durch PM bestätigen)(vorsteher von mehrer der abtgrade , oft größere bereiche die einige städte umfassen mit maybe ein zwei dutzend niederlassungen)(es ex. ca 200)
+	-Kardinal(wählen unter sich die patriachen)(vorsteher von mehrern patriarchen , über landstriche hinweg , es ex. ca um die 25)
+	-patriarch(es gibt immer nur 4(plus halt den PM), stirbt oder so weird ein fünfter patriarch gewählt und sie wählen unter sich den PM)(es ex .Patricarch des nordens ,des süden des westen und des osten ,sowei den pm zum tore dh je einer pro großer stadt auf dem mond)
+	-pontifex maximus (es kann immer nur einen geben,ernennt persöhnlich alle ab einschleißlich dekan aufwärts bis einschließlich pontifex)
+
+
+Bem : der mond hat 5 milionenstädte  mit 2-4 millionen einwohnern , es gibt noch gut ein zwei dutzend städte mit ein paar huntert tausend einwohnern , der rest ist überwiedgen ländlich mit städten kaum großern als 10000
+in den 5 großen stäften gibt jeweils um die 50.000 gatekeeper . insgesamt gibt es eine knappe milionen brüder und ca 2000 niederlassungen.
+
