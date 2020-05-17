@@ -1,2 +1,0 @@
-Text Boxes sind Felder, in die man etwas eintragen kann. Der string ist nach drücken der entertaste abrufbar. Die subklasse ermöglicht es,
-nur int werte eines bestimmten bereiches eingeben zu können. Andere Tasten führen zu Fehlermeldungen, die unter der Box angezeigt werden.
